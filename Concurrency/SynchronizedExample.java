@@ -64,6 +64,8 @@ Inside synchronized method : husbandRequestSyncThread
 Amount deducted : 1000.0 by husbandRequestSyncThread
 Inside synchronized method : wifeRequestSyncThread
 Not enough balance by wifeRequestSyncThread
+
+Synchronized uses Object(instaance) or Class Object (static) monitor locks so that only one thread can enter critical code section
 **/
 }
 catch(Exception e){
