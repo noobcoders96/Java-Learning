@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.Creational;
 
 
 public class SingletonPattern {
