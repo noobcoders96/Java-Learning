@@ -1,0 +1,60 @@
+
+         * Stream practice questions
+         * Print all students.
+         * Get the names of all students using map().
+         * Find all students whose name starts with "A".
+         * Find a student by ID.--use filter
+         * Sort students by name.
+         * Count the total number of students.
+         * Get all subjects from all students using flatMap().
+         * Get all subject names.--instead of count print names
+         * Get only unique subject names using distinct().
+         * Find all subject records where marks are greater than 80.
+         * Find all subject records where marks are greater than 90.
+         * Count how many subject scores are above 90.
+         * Find the total marks obtained by each student.
+         * Find the average marks of each student.
+         * Find the highest mark obtained by each student.
+         * Find the lowest mark obtained by each student.
+         * Find students whose average is greater than 80.
+         * Find students whose total marks are greater than 400.
+         * Sort students based on their total marks.
+         * Find the overall topper based on total marks.
+         * Find the student who scored the highest mark in Maths.
+         * Find the student who scored the lowest mark in Maths.
+         * Find the average Maths mark of all students.
+         * Find the total Maths marks of all students.
+         * Find how many students scored above 80 in Maths.
+         * Do the above dynamically for any subject name.
+         * Group students based on whether their average is above 80 using partitioningBy().
+         * Group students based on grade, such as A, B, C, based on their average.
+         * Create a Map<String, Integer> containing student name → total marks.
+         * Create a Map<String, Double> containing student name → average marks.
+         * Group all scores by subject name:
+         * Map<String, List<Subject>>
+         * Find the average mark for each subject:
+         * Maths -> 81.0
+         * Physics -> 82.6
+         * ...
+         * Find the total marks scored by all students for each subject.
+         * Find the maximum mark for each subject.
+         * Find the minimum mark for each subject.
+         * Count how many students took each subject.
+         * Find the topper of each subject:
+         * Maths -> Vijay
+         * Physics -> Vijay
+         * Chemistry -> Priya
+         * ...
+         * Find students who scored above 80 in every subject using allMatch().
+         * Find students who scored above 90 in at least one subject using anyMatch().
+         * Find students who failed at least one subject (assume pass mark = 70).
+         * Find students who did not fail any subject using noneMatch().
+         * Find the top 3 students based on average marks using sorted(), limit().
+         * Find the bottom 3 students based on average marks.
+         * Skip the top 3 students and print the remaining students using skip().
+         * Find the second-highest scoring student.
+         * Find the overall highest individual subject mark across all students.
+         * Find the overall lowest individual subject mark.
+         * Calculate the average of all marks of all students.
+         * Find the subject with the highest overall average.
+         * Find the subject with the lowest overall average.
