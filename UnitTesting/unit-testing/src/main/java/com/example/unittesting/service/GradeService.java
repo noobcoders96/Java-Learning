@@ -27,7 +27,7 @@ public class GradeService {
 
     public String generateGrade(int id){
 
-        Student s=studentRepo.findById(id).get();
+        Student s=studentRepo.findById(id).orElseThrow(()->new RuntimeException("No user found"));
         String grade="F";
         OptionalDouble d=s.getGrades().stream().mapToInt((m)->m).average();
         if(d.isPresent()){
@@ -46,4 +46,16 @@ public class GradeService {
         return grade;
 
     }
+
+    public String deleteById(int id){
+        studentRepo.deleteById(id);
+        return "Deleted";
+    }
+
+    private String validator(String s,int a,boolean b){
+        return "Private method validator" + s +" "+a+" "+b;
+    }
+
+
+
 }
