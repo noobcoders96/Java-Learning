@@ -17,7 +17,8 @@ public class VirtualThreadAndDaemonExample {
             throw new RuntimeException(e);
         }
 
-        try(ExecutorService exec =Executors.newVirtualThreadPerTaskExecutor()){//delegating the job of creating the thread to executor Service so we need to only submit the tasks
+        try(ExecutorService exec =Executors.newVirtualThreadPerTaskExecutor()){
+            //delegating the job of creating the thread to executor Service so we need to only submit the tasks
             exec.submit(()->{
                 System.out.println("Thread "+Thread.currentThread().getName()+" is running");
             });
@@ -52,5 +53,22 @@ public class VirtualThreadAndDaemonExample {
 
         System.out.println("Main thread finished");
 
+
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        for(int i=0;i<3;i++){
+            System.out.println(i+" is running ,outside the executor "+Thread.currentThread().getName());
+            int a=i;
+            executor.submit(()->{
+                try {
+                    Thread.sleep(5000);
+                    System.out.println(a+" is running ,inside the executor "+Thread.currentThread().getName());
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+        System.out.println("----------------");
+        executor.shutdown();// this make sures that exector will stop accepting the tasks and once accepted tasks are completed executor  service will shutdown
+        //executor.shutdownNow();//this will shutdown executorService shutdown immediately
     }
 }

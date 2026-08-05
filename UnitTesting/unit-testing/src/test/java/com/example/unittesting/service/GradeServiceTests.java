@@ -9,7 +9,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.OngoingStubbing;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -63,6 +62,7 @@ public class GradeServiceTests {
             method.setAccessible(true);
             String s= (String) method.invoke(gradeService,"Hello world ",1,false);
             System.out.println(s);
+            Assertions.assertNotNull(s);
         }
         catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
@@ -76,7 +76,7 @@ public class GradeServiceTests {
     @Test
     void testingForExceptionCatch(){
         System.out.println("testingForExceptionCatch");
-        Mockito.when(studentRepo.findById(1)).thenReturn(Optional.empty());
+        Mockito.when(studentRepo.findById(Mockito.anyInt())).thenReturn(Optional.empty());
         Assertions.assertThrows(RuntimeException.class, () -> {
             gradeService.generateGrade(1);
         });
